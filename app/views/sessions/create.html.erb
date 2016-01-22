@@ -1,5 +1,21 @@
-Here are your google contacts
+<h1> Welcome <%= @name %> </h1>
+<h3> Below are your google contacts </h3>
+<br />
 
-<% @contacts.each do |contact| %>
-	<%= "#{contact}" %>
+<table border="0">
+	<tr>
+		<th> Name </th>
+		<th> Emails </th>
+		<th> Phones </th>
+	<% @contacts.each do |contact| %>
+		<tr>
+			<% contact.to_hash.each do |key, value| %>
+				<td>
+					<%= "#{value}" %>
+				</td>
+			<% end %>
+		</tr>
 <% end %>
+
+	</tr>
+</table>

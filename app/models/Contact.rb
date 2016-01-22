@@ -12,4 +12,18 @@ class Contact
   	"Name: #{name}, Phones: #{phones}, Emails: #{emails}"
   end
 
+  #create a hash represenation of the contact
+  def to_hash fields = []
+      hash = {}
+      strip_fields = []
+      self.instance_variables.each{|var| 
+          if fields.length > 0
+              next unless fields.include? var.to_s.delete("@")
+          end
+          hash[var.to_s.delete("@")] = self.instance_variable_get(var) unless strip_fields.include? var.to_s
+      }
+      hash
+  end
+   
+
 end
