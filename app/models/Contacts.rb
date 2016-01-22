@@ -43,7 +43,7 @@ class Contacts
 
       contacts.push( contact  )
     end
-    contacts  
+    contacts.sort_by{|obj| obj.name.upcase }
   end
 
 
