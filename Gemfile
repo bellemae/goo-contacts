@@ -40,3 +40,4 @@ gem 'spring',        group: :development
 
 gem 'omniauth', '~> 1.2.2'
 gem 'omniauth-google-oauth2'
+gem 'nokogiri', '1.6.7.2'
