@@ -2,20 +2,21 @@
 <h3> Below are your google contacts </h3>
 <br />
 
-<table border="0">
-	<tr>
-		<th> Name </th>
-		<th> Emails </th>
-		<th> Phones </th>
-	<% @contacts.each do |contact| %>
+<%= will_paginate @contacts %>
+	<table border="0">
 		<tr>
-			<% contact.to_hash.each do |key, value| %>
-				<td>
-					<%= "#{value}" %>
-				</td>
-			<% end %>
+			<th> Name </th>
+			<th> Emails </th>
+			<th> Phones </th>
 		</tr>
-<% end %>
-
-	</tr>
-</table>
+		<% @contacts.each do |contact| %>
+			<tr>
+				<% contact.to_hash.each do |key, value| %>
+					<td>
+						<%= "#{value}" %>
+					</td>
+				<% end %>
+			</tr>
+		<% end %>
+	</table>
+<%= will_paginate @contacts %>

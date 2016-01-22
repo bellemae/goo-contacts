@@ -1,3 +1,5 @@
+require 'will_paginate/array'
+
 class SessionsController < ApplicationController
   def new
   end
@@ -7,7 +9,7 @@ class SessionsController < ApplicationController
  	@name = auth['info']['name']
   	token = auth['credentials']['token']
 
-	@contacts = Contacts.new.get(token)
+  	@contacts = Contacts.new.get(token).paginate(page: params[:page], per_page: 30)
   end
 
 end
