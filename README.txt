@@ -26,4 +26,4 @@ Add the client id & a client secret to this file, it will look like:
 Start your rails server.
 Now you can use the application by going to the ngrok address used above (or obviously your live address if you've got it hosted)
 
-NOTE: If you're using ngrok, be sure not to restart while you're running things. If you do you'll be assigned a new url and will need to update your google dev account, and update your secrets file with the new details. 
+NOTE: If you're using ngrok, be sure not to restart while you're running things. If you do you'll be assigned a new url and will need to update your google dev account.
