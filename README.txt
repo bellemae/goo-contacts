@@ -5,15 +5,18 @@ This application allows a user to log in to their Google account and displays th
 A bit of setup is required to allow the authentication with Google to work. 
 
 Go to your developer console at Google https://console.developers.google.com and create a new project.
+Click into the project and click 'Enable an API', enable Contact API.
+Click into the consent screen and add your email & a product name.
+Now click credentials > create new client ID
+Select web application
+Now it will ask for 'Authorized JavaScript origins' && 'Authorized redirect URIs'
 	
-	It will ask for 'Authorized JavaScript origins' && 'Authorized redirect URIs'
-	
-		If you are going to deploy the application to a live server, then you simply put the URI of the application & yourapp/auth/google_oauth2/callback for the redirect. If you are wanting to run it from your localhost you'll need to create a publicly visible url for google. 
+	If you are going to deploy the application to a live server, then you simply put the URI of the application & yourapp/auth/google_oauth2/callback for the redirect. If you are wanting to run it from your localhost you'll need to create a publicly visible url for google. 
 
-		Here I use ngrok, it's very quick & easy to download & setup https://ngrok.com/
-		Download, unzip, go to the directory where it's located and run ./ngrok http 3000.
-		Ngrok will show the publicly visible addresses, which look something like: http://d60sd04e.ngrok.io
-		use this for 'Authorized JavaScript origins'. Now fill in Authorized redirect URIs with the same address followed by /auth/google_oauth2/callback
+	Here I use ngrok, it's very quick & easy to download & setup https://ngrok.com/
+	Download, unzip, go to the directory where it's located and run ./ngrok http 3000.
+	Ngrok will show the publicly visible addresses, which look something like: http://d60sd04e.ngrok.io
+	use this for 'Authorized JavaScript origins'. Now fill in Authorized redirect URIs with the same address followed by /auth/google_oauth2/callback
 
 	When you save it will provide you with a client id & a client secret.
 
