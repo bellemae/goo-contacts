@@ -9,7 +9,8 @@ class SessionsController < ApplicationController
  	@name = auth['info']['name']
   	token = auth['credentials']['token']
 
-  	@contacts = Contacts.new.get(token).paginate(page: params[:page], per_page: 30)
+  	@contacts = Contacts.new.get(token).paginate(page: params[:page], per_page: 5)
+
   end
 
 end
